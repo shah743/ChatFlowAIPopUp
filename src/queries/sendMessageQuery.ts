@@ -6,7 +6,6 @@ export type IncomingInput = {
   history: MessageType[];
   uploads?: FileUpload[];
   overrideConfig?: Record<string, unknown>;
-  socketIOClientId?: string;
   chatId?: string;
   fileName?: string; // Only for assistant
 };
@@ -62,19 +61,13 @@ export const sendMessageQuery = ({ chatflowid, apiHost = 'http://localhost:3000'
 export const getChatbotConfig = ({ chatflowid, apiHost = 'http://localhost:3000' }: MessageRequest) =>
   sendRequest<any>({
     method: 'GET',
-    url: `${apiHost}/api/v1/public-chatbotConfig/${chatflowid}`,
-  });
-
-export const isStreamAvailableQuery = ({ chatflowid, apiHost = 'http://localhost:3000' }: MessageRequest) =>
-  sendRequest<any>({
-    method: 'GET',
-    url: `${apiHost}/api/v1/chatflows-streaming/${chatflowid}`,
+    url: `${apiHost}/api/v1/chatbotConfig/${chatflowid}`,
   });
 
 export const sendFileDownloadQuery = ({ apiHost = 'http://localhost:3000', body }: MessageRequest) =>
   sendRequest<any>({
     method: 'POST',
-    url: `${apiHost}/api/v1/openai-assistants-file`,
+    url: `${apiHost}/api/v1/assistants-file`,
     body,
     type: 'blob',
   });
