@@ -53,7 +53,9 @@ export const Badge = (props: Props) => {
         class="lite-badge"
         id="lite-badge"
         style={{ 'font-weight': 'bold', color: props.poweredByTextColor ?? defaultTextColor }}
-      ><span>ChatFlowAI.app</span></a>
+      >
+        <span>ChatFlowAI.app</span>
+      </a>
     </span>
   );
 };
