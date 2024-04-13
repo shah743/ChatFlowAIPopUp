@@ -1,28 +1,10 @@
 <!-- markdownlint-disable MD030 -->
 
-# Flowise Embed
+# ChatFlowAI.app Embed
 
-Javascript library to display flowise chatbot on your website
+Javascript library to display ChatFlowAI.app chatbot on your website
 
 ![Flowise](https://github.com/FlowiseAI/FlowiseChatEmbed/blob/main/images/ChatEmbed.gif?raw=true)
-
-Install:
-
-```bash
-yarn install
-```
-
-Dev:
-
-```bash
-yarn dev
-```
-
-Build:
-
-```bash
-yarn build
-```
 
 ## Embed in your HTML
 
@@ -30,10 +12,10 @@ yarn build
 
 ```html
 <script type="module">
-  import Chatbot from 'https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js';
+  import Chatbot from 'https://cdn.jsdelivr.net/gh/shah743/ChatFlowAIPopUp/dist/web.js';
   Chatbot.init({
     chatflowid: '<chatflowid>',
-    apiHost: 'http://localhost:3000',
+    apiHost: 'https://chatflowai.app',
   });
 </script>
 ```
@@ -45,7 +27,7 @@ yarn build
   import Chatbot from './web.js';
   Chatbot.initFull({
     chatflowid: '<chatflowid>',
-    apiHost: 'http://localhost:3000',
+    apiHost: 'https://chatflowai.app',
   });
 </script>
 <flowise-fullchatbot></flowise-fullchatbot>
@@ -59,7 +41,7 @@ To enable full screen, add `margin: 0` to <code>body</code> style, and confirm y
     import Chatbot from './web.js';
     Chatbot.initFull({
       chatflowid: '<chatflowid>',
-      apiHost: 'http://localhost:3000',
+      apiHost: 'https://chatflowai.app',
       theme: {
         chatWindow: {
           // height: 700, don't set height
@@ -77,10 +59,10 @@ You can also customize chatbot with different configuration
 
 ```html
 <script type="module">
-  import Chatbot from 'https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js';
+  import Chatbot from 'https://cdn.jsdelivr.net/gh/shah743/ChatFlowAIPopUp/dist/web.js';
   Chatbot.init({
     chatflowid: '91e9c803-5169-4db9-8207-3c0915d71c5f',
-    apiHost: 'http://localhost:3000',
+    apiHost: 'https://chatflowai.app',
     chatflowConfig: {
       // topK: 2
     },
@@ -110,7 +92,7 @@ You can also customize chatbot with different configuration
       },
       chatWindow: {
         showTitle: true, // show/hide the title bar
-        title: 'Flowise Bot',
+        title: 'ChatFlowAI.app Bot',
         titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
         welcomeMessage: 'Hello! This is custom welcome message',
         backgroundColor: '#ffffff',
@@ -141,7 +123,3 @@ You can also customize chatbot with different configuration
   });
 </script>
 ```
-
-## License
-
-Source code in this repository is made available under the [MIT License](https://github.com/FlowiseAI/Flowise/blob/master/LICENSE.md).
